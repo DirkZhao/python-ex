@@ -15,4 +15,3 @@ def get_code(name):
     stations = dict(re.findall(u'([\u4e00-\u9fa5]+)\|([A-Z]+)', r.text))
     code = stations[name]
     return code
-
