@@ -66,7 +66,7 @@ def get_products():
 
 
 def save_to_csv(product):
-    with open(FileName, 'a') as f:
+    with open(FileName, 'a', encoding='gb18030') as f:
         s = product['title'] + ',' + product['price'] + ',' + product['amount'] + ',' + product['location'] + ',' + \
             product['shop'] + ',' + product['url'] + '\n'
         try:
