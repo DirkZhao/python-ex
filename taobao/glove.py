@@ -16,7 +16,7 @@ driver = webdriver.Firefox(executable_path='/Users/dirkzhao/Code/python-ex/drive
 index_url = 'https://www.taobao.com/'
 wait = WebDriverWait(driver, 10)
 KEYWORD = '手套'
-FileName = '/Users/dirkzhao/Code/python-ex/dataKEYWORD'+KEYWORD+'.csv'
+FileName = '/Users/dirkzhao/Code/python-ex/data/'+KEYWORD+'.csv'
 
 
 def search(keyword):
@@ -42,6 +42,7 @@ def get_next_page(pageNum):
         user_page_input.send_keys(pageNum)
         user_page_button.click()
         wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, 'li.active > span:nth-child(1)'), str(pageNum)))
+        get_products()
     except TimeoutError:
         get_next_page(pageNum)
 
