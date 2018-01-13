@@ -8,11 +8,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import re
 from pyquery import PyQuery as pq
+import os
 
 #不加载图片，节省时间
 SERVICE_ARGS=['--load-images=false']
 # driver = webdriver.PhantomJS(service_args=SERVICE_ARGS, executable_path="/Users/dirkzhao/Code/python-ex/drivers/phantomjs")
-driver = webdriver.Firefox(executable_path='/Users/dirkzhao/Code/python-ex/drivers/geckodriver')
+base_path = os.path.abspath(os.path.pardir)
+dirvers_path = os.path.join(base_path, 'drivers')
+driver_path = os.path.join(dirvers_path, 'geckodriver')
+driver = webdriver.Firefox(executable_path=driver_path)
 index_url = 'https://www.taobao.com/'
 wait = WebDriverWait(driver, 10)
 KEYWORD = '手套'
