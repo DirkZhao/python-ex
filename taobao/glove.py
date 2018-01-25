@@ -14,13 +14,13 @@ import os
 SERVICE_ARGS=['--load-images=false']
 # driver = webdriver.PhantomJS(service_args=SERVICE_ARGS, executable_path="/Users/dirkzhao/Code/python-ex/drivers/phantomjs")
 base_path = os.path.abspath(os.path.pardir)
-dirvers_path = os.path.join(base_path, 'drivers')
-driver_path = os.path.join(dirvers_path, 'geckodriver')
+driver_path = os.path.join(base_path, 'drivers', 'geckodriver-win64.exe')
 driver = webdriver.Firefox(executable_path=driver_path)
 index_url = 'https://www.taobao.com/'
 wait = WebDriverWait(driver, 10)
-KEYWORD = '手套'
-FileName = '/Users/dirkzhao/Code/python-ex/data/'+KEYWORD+'.csv'
+KEYWORD = '运动手套'
+file = KEYWORD + '.csv'
+FileName = os.path.join(base_path, 'data', file)
 
 
 def search(keyword):
