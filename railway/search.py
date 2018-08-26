@@ -10,7 +10,7 @@ from urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 
-def cli(st_station='上海站', des_station='辛集', date: object = '2018-09-01') -> object:
+def cli(st_station='上海', des_station='辛集', date: object = '2018-09-01') -> object:
     from_station = st.get_code(st_station)
     to_station = st.get_code(des_station)
     url = ('https://kyfw.12306.cn/otn/leftTicket/query?'  
